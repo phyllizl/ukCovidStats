@@ -10,7 +10,7 @@ import makeStyles from '@mui/styles/makeStyles'
 
 const useStyles = makeStyles(theme => ({
     numberField: {
-        width: '33%',
+        width: '31%',
         margin: '5px',
         backgroundColor: theme.palette.primary.main,
 
