@@ -9,33 +9,36 @@ import Typography from '@mui/material/Typography'
 import makeStyles from '@mui/styles/makeStyles'
 
 const useStyles = makeStyles(theme => ({
-    numberField: {
-        width: '31%',
-        margin: '5px',
-        backgroundColor: theme.palette.primary.main,
+    root: {
+        padding: "16px",
 
         [theme.breakpoints.down('sm')]: {
-            width: "100%",
-            lineHeight: "0.3"
+            flexWrap: "wrap"
         },
     },
-    chart: {
-        width: '48%',
-        justifyContent: 'center',
-        textAlign: 'center',
-        margin: '5px',
+    text: {
+        fontSize: '2rem',
 
         [theme.breakpoints.down('sm')]: {
-            width: "100%"
+            width: '100%',
         },
     },
-    cardText: {
-        fontSize: '1rem',
+    paragraph: {
+        width: '60%',
 
         [theme.breakpoints.down('sm')]: {
-            fontSize: '1 rem'
+            width: '100%',
+            textAlign: 'justify',
         },
     },
+    numberCards: {
+        width: '40%',
+
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
+            marginTop: '2rem'
+        },
+    }
 }))
 
 const HomePageData = () => {
@@ -75,7 +78,8 @@ const HomePageData = () => {
         console.log('fetch')
     }, [state])
 
-
+    //percentage completed first dose: 77.4 .percentageFirstDose
+    //percentage completed: 70.6 .percentageComplete
     return (
     <>
         { englandRawData.current &&
@@ -84,16 +88,25 @@ const HomePageData = () => {
             <Box
                 display='flex'
                 width='100%'
-                flexWrap="wrap"
+                className={classes.root}
+                // flexWrap="wrap"
                 // sx={{
                 //     backgroundColor: "primary.green"
                 // }}
-            >
+            >   
+                <Box className={classes.paragraph}>
+                    <Typography className={classes.text} variant="h2">There were <b>{englandRawData.current[0].newcases}</b> new cases <b>yesterday</b>. </Typography><br/>
+                    <Typography className={classes.text} variant="h2">
+                        As of <b>{englandRawData.current[1].date}</b>, the percentage of population that have completed their first dose of the vaccine is <b>{englandRawData.current[1].percentageFirstDose}%</b>. The percentage of population with complete coverage by vaccination is <b>{englandRawData.current[1].percentageComplete}%</b>.
+                    </Typography><br/>
+                    <Typography variant="body1" sx={{fontWeight: 'light'}}>This data is constantly updated from the latest information available on the official UK government's covid-19 website.</Typography>
+                </Box>
+
+                <Box className={classes.numberCards}>
                 <BasicCard 
                     text="New Cases on:"
                     data={englandRawData.current[0].date}
                     number={englandRawData.current[0].newcases}
-                    cardColor="primary.green"
                 />
 
                 <BasicCard
@@ -107,6 +120,7 @@ const HomePageData = () => {
                     data={englandRawData.current[2].date} 
                     number={englandRawData.current[2].hospital}
                 />
+                </Box>
 
             </Box>
 
@@ -114,6 +128,9 @@ const HomePageData = () => {
                 display="flex"
                 width="100%"
                 flexWrap="wrap"
+                sx={{
+                    padding: "16px",
+                }}
             >
 
                 <Chart 

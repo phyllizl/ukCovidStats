@@ -5,11 +5,12 @@ import makeStyles from '@mui/styles/makeStyles'
 
 const useStyles = makeStyles(theme => ({
     numberField: {
-        width: '33%',
-        margin: '5px',
+        width: '100%',
+        margin: theme.spacing(1,0),
+        padding: theme.spacing(0,2),
+        backgroundColor: theme.palette.primary.blue,
 
         [theme.breakpoints.down('sm')]: {
-            width: "100%",
             lineHeight: "0.3"
         },
     },
@@ -20,10 +21,15 @@ const useStyles = makeStyles(theme => ({
             fontSize: '1 rem'
         },
     },
+    number: {
+        [theme.breakpoints.up('sm')]: {
+            fontSize: '2rem'
+        },
+    }
 }))
 
 
-const BasicCard = ({text, data, number, cardColor}) => {
+const BasicCard = ({text, data, number}) => {
 
     const classes = useStyles()
 
@@ -32,22 +38,27 @@ const BasicCard = ({text, data, number, cardColor}) => {
             variant="outlined"
             className={classes.numberField}
         >
-            <CardContent>
+            <CardContent
+                sx={{
+                    backgroundColor:"primary.blue"
+                }}
+            >
                 <Typography 
-                    variant='h6'
+                    variant='h3'
                     className={classes.cardText}
                 >
                     {text}
                 </Typography><br/>
                 <u><Typography 
-                    variant='h6'
+                    variant='body2'
                     className={classes.cardText}
                 >
                     {data}
                 </Typography></u><br/>
                 <Typography 
-                    variant='h4'
+                    variant='h3'
                     color='#000080'
+                    className={classes.number}
                 > 
                     {number}
                 </Typography>

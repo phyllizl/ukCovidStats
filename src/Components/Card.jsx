@@ -23,11 +23,16 @@ const useStyles = makeStyles(theme => ({
         }
     }, 
     text: {
+        fontSize: '1.3rem',
+        color: theme.palette.secondary.main
+    },
+    biggerText: {
+        fontSize: '2rem',
         color: theme.palette.secondary.main
     }
 }))
 
-const CardFeature = ({image, content}) => {
+const CardFeature = ({image, content='', alt, bigText=''}) => {
     const classes = useStyles();
 
     return (
@@ -39,7 +44,7 @@ const CardFeature = ({image, content}) => {
                 className={classes.cardMedia}
                 component="img"
                 image={image}
-                alt='imageText'
+                alt={alt}
                 >
             </CardMedia>
             <CardContent style={{ 
@@ -51,10 +56,16 @@ const CardFeature = ({image, content}) => {
                 }
             }}>
                 <Typography
-                    variant='h6'
+                    variant='h3'
                     className={classes.text}
                 >
                     {content}
+                </Typography>
+                <Typography
+                    variant='h4'
+                    className={classes.biggerText}
+                >
+                    {bigText}
                 </Typography>
             </CardContent>
         </Card>

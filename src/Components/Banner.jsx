@@ -16,7 +16,7 @@ const useStyles = makeStyles (theme => ({
     }, 
 }))
 
-const Banner = () => {
+const Banner = ({title, content, image, alt}) => {
     const classes = useStyles();
 
     return (
@@ -35,8 +35,8 @@ const Banner = () => {
                 sx={{ width: "50%"}}
                 component="img"
                 sc={{width: 100}}
-                image="https://i.stack.imgur.com/y9DpT.jpg"
-                alt="image"
+                image={image} // "https://i.stack.imgur.com/y9DpT.jpg"
+                alt={alt}
             >
             </CardMedia>
             
@@ -48,8 +48,8 @@ const Banner = () => {
                 }}
                 classes={{root: classes.cardContent}}
             >
-                <Typography component="div" variant="h5"> Daily updated Covid-19 Statistics </Typography>  
-                <Typography variant="subtitle1">data derived from coronavirus.data.gov.uk</Typography>
+                <Typography component="div" variant="h5">{title}</Typography>  
+                <Typography variant="subtitle1">{content}</Typography>
 
             </CardContent>
 

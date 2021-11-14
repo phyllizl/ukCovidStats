@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
        }
     },
     paragraph: {
-        padding: theme.spacing(4, 0, 1, 0),
+        padding: theme.spacing(10, 0, 1, 0),
         color: theme.palette.secondary.main,
         fontFamily: 'Source Serif Pro, serif',
         fontWeight: 600,
@@ -51,10 +51,11 @@ const Home = () => {
                 variant='body1'
                 sx={{
                     margin: 2,
-                    color: "#000080"
+                    color: "#000080",
+                    fontWeight: "light",
                 }}
             >
-                This information comes from the official UK Government's website. This document explains the key statistics presented on the UK Coronavirus (COVID-19) Dashboard. 
+                This information comes from the official UK Government's website. This document explains the key statistics for England as presented on the UK Coronavirus (COVID-19) Dashboard. 
             </Typography>
             
             <HomePageData />
@@ -62,7 +63,10 @@ const Home = () => {
             <Typography 
                 className={classes.paragraph}
                 align='center'
-                variant='h6'
+                variant='h5'
+                sx={{
+                    marginTop: '10rem'
+                }}
             >
                 Get to know your Covid-19 statistics and stay protected.
             </Typography>

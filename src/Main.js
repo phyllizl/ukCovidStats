@@ -39,6 +39,7 @@ const Main = () => {
         <Container style={{
             backgroundColor: "white",
             disableGutters: true,
+            maxWidth: "800px"
         }}>
 
         <Router>

@@ -6,11 +6,11 @@ const Footer = () => {
     return (
         <Box
             display='flex'
+            flexWrap="wrap"
             sx={{
                 height: '200px',
                 backgroundColor: '#FFF6F3',
                 alignContent: 'center',
-                alignItems: 'center',
                 justifyContent: 'center',
                 marginTop: '50px'
             }}
@@ -18,10 +18,24 @@ const Footer = () => {
             <Typography
                 variant='h5'
                 sx={{
-                    color: '#000080'
+                    color: '#000080',
+                    fontWeight: 'light',
+                    width: '100%',
+                    textAlign: 'center'
                 }}
             >
             Stay up to date with the latest statistics. 
+            </Typography>
+            <Typography
+                variant='body1'
+                sx={{
+                    color: '#000080',
+                    fontWeight: 'light',
+                    width: '100%',
+                    textAlign: 'center'
+                }}
+            >
+            Data driven from https://coronavirus.data.gov.uk
             </Typography>
         </Box>
     )
