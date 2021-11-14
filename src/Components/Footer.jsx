@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
+
 const Footer = () => {
 
     return (
@@ -21,7 +22,8 @@ const Footer = () => {
                     color: '#000080',
                     fontWeight: 'light',
                     width: '100%',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    fontSize: '1rem'
                 }}
             >
             Stay up to date with the latest statistics. 
@@ -32,7 +34,8 @@ const Footer = () => {
                     color: '#000080',
                     fontWeight: 'light',
                     width: '100%',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    fontSize: '0.6rem'
                 }}
             >
             Data driven from https://coronavirus.data.gov.uk

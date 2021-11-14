@@ -10,8 +10,6 @@ import makeStyles from '@mui/styles/makeStyles'
 
 const useStyles = makeStyles(theme => ({
     root: {
-        padding: "16px",
-
         [theme.breakpoints.down('sm')]: {
             flexWrap: "wrap"
         },
