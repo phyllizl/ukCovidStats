@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
         width: '48%',
         justifyContent: 'center',
         textAlign: 'center',
-        margin: '5px',
+        margin: theme.spacing(1,0.5),
 
         [theme.breakpoints.down('sm')]: {
             width: "100%"

@@ -8,7 +8,7 @@ import makeStyles from "@mui/styles/makeStyles"
 const useStyles = makeStyles(theme => ({
     cardRoot: {
         width: '30%',
-        padding: theme.spacing(2),
+        padding: theme.spacing(2, 0),
 
         [theme.breakpoints.down('sm')]: {
             width: '100%'
@@ -24,7 +24,10 @@ const useStyles = makeStyles(theme => ({
     }, 
     text: {
         fontSize: '1.3rem',
-        color: theme.palette.secondary.main
+        color: theme.palette.secondary.main,
+        "& .MuiTypography-root" : {
+            fontWeight: 'light',
+        }
     },
     biggerText: {
         fontSize: '2rem',
@@ -56,7 +59,7 @@ const CardFeature = ({image, content='', alt, bigText=''}) => {
                 }
             }}>
                 <Typography
-                    variant='h3'
+                    variant='body1'
                     className={classes.text}
                 >
                     {content}

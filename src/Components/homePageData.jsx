@@ -76,8 +76,6 @@ const HomePageData = () => {
         console.log('fetch')
     }, [state])
 
-    //percentage completed first dose: 77.4 .percentageFirstDose
-    //percentage completed: 70.6 .percentageComplete
     return (
     <>
         { englandRawData.current &&
@@ -126,9 +124,7 @@ const HomePageData = () => {
                 display="flex"
                 width="100%"
                 flexWrap="wrap"
-                sx={{
-                    padding: "16px",
-                }}
+                justifyContent="space-between"
             >
 
                 <Chart 

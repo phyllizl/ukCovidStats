@@ -13,6 +13,7 @@ const useStyles = makeStyles(theme => ({
     box: {
        display: 'flex',
        paddingTop: '20px',
+       justifyContent: 'space-between',
 
        [theme.breakpoints.down('sm')]: {
            flexDirection: 'column'
