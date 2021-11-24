@@ -32,6 +32,7 @@ const useStyles = makeStyles(theme => ({
         top: "40%",
         position: "absolute",
         paddingLeft: "30px",
+        width: "80%",
 
         [theme.breakpoints.down('sm')]: {
             paddingLeft: "20px"

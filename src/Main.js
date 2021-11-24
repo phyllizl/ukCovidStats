@@ -9,6 +9,7 @@ import NavBar from './Components/Navbar'
 // pages
 import RenderData from './Pages/RenderData'
 import Home from './Pages/Home'
+import ContactPage from './Pages/Contact'
 
 const Main = () => {
 
@@ -48,6 +49,7 @@ const Main = () => {
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path="/data" element={<RenderData />} />
+                        <Route path="/contact" element={<ContactPage />} />
                     </Routes>
             </ThemeProvider>
         </Router>

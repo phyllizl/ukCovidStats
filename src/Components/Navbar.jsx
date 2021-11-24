@@ -47,6 +47,10 @@ const NavBar = () => {
         navigate('/');
     }
 
+    const navigateToContact = () => {
+        navigate('/contact');
+    }
+
     return (
         <AppBar
             color="transparent"
@@ -131,6 +135,7 @@ const NavBar = () => {
                         fontSize: "1.1rem",
                         fontFamily: "Source Serif Pro, serif",
                     }} 
+                    onClick={navigateToContact}
                 > 
                     Contact Us
                 </Button>

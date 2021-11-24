@@ -73,7 +73,6 @@ const HomePageData = () => {
 
     useEffect(() => {
         fetchAPI()
-        console.log('fetch')
     }, [state])
 
     return (
@@ -93,7 +92,7 @@ const HomePageData = () => {
                 <Box className={classes.paragraph}>
                     <Typography className={classes.text} variant="h2">There were <b>{englandRawData.current[0].newcases}</b> new cases <b>yesterday</b>. </Typography><br/>
                     <Typography className={classes.text} variant="h2">
-                        As of <b>{englandRawData.current[1].date}</b>, the percentage of population that have completed their first dose of the vaccine is <b>{englandRawData.current[1].percentageFirstDose}%</b>. The percentage of population with complete coverage by vaccination is <b>{englandRawData.current[1].percentageComplete}%</b>.
+                        As of <b>{englandRawData.current[1].date}</b>, the percentage of population that have completed their first dose of the vaccine is <b>{englandRawData.current[1].percentageFirstDose || 'NA'}%</b>. The percentage of population with complete coverage by vaccination is <b>{englandRawData.current[1].percentageComplete || 'NA'}%</b>.
                     </Typography><br/>
                     <Typography variant="body1" sx={{fontWeight: 'light'}}>This data is constantly updated from the latest information available on the official UK government's covid-19 website.</Typography>
                 </Box>
@@ -102,19 +101,19 @@ const HomePageData = () => {
                 <BasicCard 
                     text="New Cases on:"
                     data={englandRawData.current[0].date}
-                    number={englandRawData.current[0].newcases}
+                    number={englandRawData.current[0].newcases || 'NA'}
                 />
 
                 <BasicCard
                     text="Total Vaccines given: "
                     data={englandRawData.current[1].date}
-                    number={englandRawData.current[1].vaccine}
+                    number={englandRawData.current[1].vaccine || 'NA'}
                 />
 
                 <BasicCard
                     text="New Hospital Admissions on "
                     data={englandRawData.current[2].date} 
-                    number={englandRawData.current[2].hospital}
+                    number={englandRawData.current[2].hospital || 'NA'}
                 />
                 </Box>
 
