@@ -113,7 +113,7 @@ const NavBar = () => {
                     }}
                 >
                     <MenuItem onClick={navigateToData}>Get Statistics</MenuItem>
-                    <MenuItem>Contact Us</MenuItem>
+                    <MenuItem onClick={navigateToContact}>Contact Us</MenuItem>
                 </Menu>
             </Box>
 
